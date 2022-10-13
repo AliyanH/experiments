@@ -1,0 +1,142 @@
+html,
+body {
+    height: 100%;
+    /* These styles are required if you wish to use a % based
+                 height value on the mapml-viewer element. */
+}
+
+mapml-viewer:defined {
+    width: 50%;
+    height: 50%;
+}
+
+center {
+    height: 90%;
+}
+
+#search {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+#search:hover {
+    opacity: 1
+}
+
+
+/* ----------- Styling for Tabs ----------- */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 50%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /*border: 1px solid #ccc;
+    border-top: none; */
+}
+
+.tabcontent {
+    animation: fadeEffect 1s;
+    /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ----------- Styling for Tabs ----------- */
+
+@media all and (max-width: 1200px) {
+
+    /* CSS rules here for screens lower than 1200px */
+    mapml-viewer:defined {
+        width: 100%;
+    }
+
+    .tab {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 750px) {
+    /* CSS rules here for screens above 750px */
+}
+
+
+
+
+/* Styling for spinner */
+#spinner:not([hidden]) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #f25a41;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
