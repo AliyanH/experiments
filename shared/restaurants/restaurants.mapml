@@ -178,46 +178,6 @@
                 </table>
             </map-properties>
         </map-feature>
-        <map-feature id="restaurant_map-point.13" class="restaurant_map-point">
-          <map-featurecaption>Phucket Royal</map-featurecaption>
-            <map-geometry>
-              <map-point>
-                <map-coordinates>-75.70786179432208 45.410746385011166</map-coordinates>
-              </map-point>
-            </map-geometry>
-            <map-properties>
-                <table>
-                    <thead>
-                        <tr>
-                            <th role="columnheader" scope="col">Property name</th>
-                            <th role="columnheader" scope="col">Property value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">amenity</th>
-                            <td itemprop="amenity">restaurant</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">name</th>
-                            <td itemprop="name">Phucket Royal</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">addr_stree</th>
-                            <td itemprop="addr_stree">Somerset Street West</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">addr_house</th>
-                            <td itemprop="addr_house">713</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">cuisine</th>
-                            <td itemprop="cuisine">thai</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </map-properties>
-        </map-feature>
         <map-feature id="restaurant_map-point.18" class="restaurant_map-point">
           <map-featurecaption>Sushi 88</map-featurecaption>
             <map-geometry>
