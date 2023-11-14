@@ -7,10 +7,38 @@
     <!-- the layer in this map should continue to be visible when you change
     the viewer projection from OSMTILE to CBMTILE.  -->
     <script type="module" src="../../dist/mapml-viewer.js"></script>
-    <link rel="stylesheet" href="../../global.css">
+    <style>
+      mapml-viewer {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+      }
+      button {
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        cursor: pointer;
+      }
+      output {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-  <mapml-viewer zoom="15" lon="-75.703611" lat="45.411105" controls projection="OSMTILE">
+  <mapml-viewer height="700" zoom="15" lon="-75.703611" lat="45.411105" controls projection="OSMTILE">
     <layer- label="Projection changer"  checked>
       <map-extent label="National Geographic" units="OSMTILE" checked >
         <map-input name="TileMatrix" type="zoom" value="18" min="0" max="18"></map-input>
@@ -25,7 +53,27 @@
         <map-link rel="tile" tref="https://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer/tile/{z}/{y}/{x}?m4h=t" ></map-link>
       </map-extent>    
     </layer->
-    
 </mapml-viewer>
+
+<button onclick="changeProjection()">Change Projection</button>
+<br>
+<output></output>
+
+<script>
+  function changeProjection() {
+    const map = document.querySelector("mapml-viewer");
+    if (map.projection === "OSMTILE") {
+      map.setAttribute("projection", "CBMTILE");
+    } else {
+      map.setAttribute("projection", "OSMTILE");
+    }
+
+    // console projection
+    const out = document.querySelector("output");
+    const extents = document.querySelectorAll("map-extent");
+    out.innerHTML = `Projection changed to - <strong>${map.getAttribute("projection")}</strong>: <br> ${extents[0].units} extent was set to disabled = <strong>${extents[0].disabled}</strong> <br> ${extents[1].units} extent was set to disabled = <strong>${extents[1].disabled}</strong>`
+  }
+</script>
+
 </body>
 </html>
